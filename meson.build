@@ -2,6 +2,8 @@ project('timerscripts', 'c',
   version : '0.1',
   default_options : ['warning_level=3'])
 
+cmake = import('cmake')
+
 deps = []
 
 deps += dependency('libcurl', version: '>=8.5.0')

@@ -28,7 +28,7 @@ struct API *new_API(void)
 {
     struct API *newApi;
     newApi = malloc(sizeof(struct API));
-    newApi->URL = "link";
+    newApi->URL = getenv("LINK");
     return newApi;
 }
 
@@ -40,6 +40,7 @@ char *getUser(struct API *newApi, char *username)
 
     curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
+    
     if (curl)
     {
         size_t sizeURL = strlen(newApi->URL);
@@ -63,8 +64,6 @@ char *getUser(struct API *newApi, char *username)
             curl_global_cleanup();
             return curl_easy_strerror(res);
         }
-
-        printf(response);
 
         free(newURL);
     }
