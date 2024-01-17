@@ -1,12 +1,11 @@
 #include <stdio.h>
+#include "headers/api.h"
 
-#define PROJECT_NAME "timerscripts"
+int main() {
+    struct API* TimerScriptsAPI;
+    TimerScriptsAPI = new_API();
 
-int main(int argc, char **argv) {
-    if(argc != 1) {
-        printf("%s takes no arguments.\n", argv[0]);
-        return 1;
-    }
-    printf("This is project %s.\n", PROJECT_NAME);
+    printf("%s", getUser(TimerScriptsAPI, "KingTimer12"));
+
     return 0;
 }
