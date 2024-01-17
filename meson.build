@@ -7,9 +7,10 @@ cmake = import('cmake')
 deps = []
 
 deps += dependency('libcurl', version: '>=8.5.0')
-deps += dependency('rapidjson', version: '>=1.1.0')
 
-exe = executable('timerscripts', ['src/main.c', 'src/api.c'],
+deps += dependency('jansson')
+
+exe = executable('timerscripts', ['src/main.c', 'src/api.c', 'src/account.c'],
   install : true, dependencies: deps)
 
 ###libruntime_lt_c=1

@@ -26,8 +26,7 @@ struct API
 
 struct API *new_API(void)
 {
-    struct API *newApi;
-    newApi = malloc(sizeof(struct API));
+    struct API *newApi = malloc(sizeof(struct API));
     newApi->URL = getenv("LINK");
     return newApi;
 }
